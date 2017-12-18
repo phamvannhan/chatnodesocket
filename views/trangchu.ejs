@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>ungdung-chatweb-socket</title>
+	<link rel=stylesheet href="css/bootstrap.min.css" />
+	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<script src="jquery-3.2.1.min.js"></script>
+	<script src="socket.io/socket.io.js"></script> <!--thêm thư viện của socket.io-->
+	<script src="js/xuly.js"></script>
+</head>
+<body>
+<div id="warper" class="container">
+		<div id="top">
+			<nav class="navbar navbar-inverse site-top navbar-static-top">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#" style="color: #f4117f; font-weight: bold;">UDMMT - NHÓM 12 CNTT - K14 SGU 2017 </a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav nav navbar-nav navbar-right">
+			        <li><p class="text-center" style="padding-top: 15px; color: white; font-size: 15px;">Xin chào <span  id="currentUser"></span></p></li>
+			        <li ><button type="button" id="btnLogout" class="btn btn-info text-center">LogOut <i class="fa fa-sign-out" aria-hidden="true"></i></button> </li>
+			       
+			      </ul>
+			  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+		<!--end #top-->
+		<div class="col-md-6 col-sm-6 col-xs-6 left">
+			<div class="left-menu">
+				<div class="panel-group">
+				    
+				    <div class="panel panel-default">				     
+				      <div class="panel-heading">
+				        <h4 class="panel-title">
+				          <a data-toggle="collapse" href="#groupchat"> <i class="fa fa-table" aria-hidden="true"></i> <b>APP GROUP CHAT SOCKET.IO</b> </a>
+				        </h4>
+				      </div>
+					</div>
+
+					<div class="border-dki" id="border-dki">				     
+				     	<input type="text" id="txtUsername" placeholder="Nhập tên người dùng" style=" width: 300px; height: 30px; " >
+				     	<input class="btn-info  btn-dki" type="button" value="Login" id="btnDki">
+					</div>
+
+				    <div class="panel panel-default " id="border-user">	<!--khung danh sách online-->			     
+				      <div class="panel-heading">
+				        <h4 class="panel-title">
+				          <div >
+				          		<a data-toggle="collapse" href="#list"> <i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i>  Danh Sách đang online <span class="sumuseronline"></span> </a>
+				          </div>
+				          <br>
+				          <div id="list-user">
+
+				          </div>
+				        </h4>
+				      </div>
+				      
+				    </div>
+				    <div class="content_guide">
+				    	<h1 class="text-center" style="background-color: #e5e5e5; color:#e85f5f;">Hướng dẫn sử dụng</h1>
+				    	
+				    		<h4 ><span class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></span><b>Bước 1: Chạy Server</b></h4>
+				    			<div class="text_guide">
+				    				<span class="fa fa-check" aria-hidden="true"> Chạy Git của app bằng lệnh "node server.js". </span>
+					    			<span class="fa fa-check" aria-hidden="true"> Server đã tạo sẵn một socket có port:3000 để lắng nghe và chấp nhận các kết nối từ client cùng port:3000</span>
+					    			<span class="fa fa-check" aria-hidden="true"> Nếu chạy trên heroku chỉ cần theo đường dẫn "https://ungdungwebchat.herokuapp.com/"</span>
+				    			</div>
+					    	 <h4 ><span class="fa fa-cog fa-spin fa-fw" aria-hidden="true"></span><b>Bước 2: Chạy Client</b></h4>
+					    	 <div class="text_guide">
+				    				<span class="fa fa-location-arrow" aria-hidden="true"> Chạy trình duyệt của app theo đường dẫn "http://localhost:3000". </span>
+					    			<span class="fa fa-location-arrow" aria-hidden="true"> Client cũng tạo sẵn một socket có port:3000 để lắng nghe và nhận kết quả trả về từ Server.</span>
+					    			<span class="fa fa-location-arrow" aria-hidden="true"> Nếu chạy trên heroku chỉ cần theo đường dẫn "https://ungdungwebchat.herokuapp.com/"</span>
+				    		</div>
+				    			<h4 ><span class="fa fa-sun-o fa-spin fa-fw" aria-hidden="true"></span><b>Hình ảnh mô tả hoạt động của App chat socket</b></h4>
+				    		<div class="text_guide">
+				    			<img src="image/motahinh.jpg" alt="hinhmota" width="100%" height="200px">
+				    		</div>
+					    	 
+				    	
+				    </div>
+				    
+				</div>
+			</div>
+			<!--end .left-menu-->
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="col-md-6 col-sm-6 col-xs-6" id="chat" >	
+			<div id="listMessage" >
+				
+			</div>
+			<div id="thongbao"></div>
+			<input type="text"  id="txtMessage" placeholder ="Gõ vào đây....">
+			<input type="button" class="btn btn-primary" value="Gửi"  id="btn-sendMessage">
+		</div>
+		
+	</div>
+	<script>
+		
+	</script>
+</body>
+</html>

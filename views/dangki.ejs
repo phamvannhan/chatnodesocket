@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel=stylesheet href="css/bootstrap.min.css" />
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="css/normalize.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+
+
+
+<script src="jquery-3.2.1.min.js"></script>
+<script src="socket.io/socket.io.js"></script> <!--thêm thư viện của socket.io-->
+<script src="js/xuly.js"></script>
+
+</head>
+<body>
+<div id="warper">
+		<div id="top">
+			<nav class="navbar navbar-default site-top">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#" style="color: #ff9708;">Sgu.edu.vn</a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><p class="text-center" style="padding-top: 15px;">Xin chào <span style="color: red" id="currentUser"></span></p></li>
+			        <li><input type="button" id="btnLogout" value="Đăng Xuất" ><i class="fa fa-sign-out" aria-hidden="true"></i> </li>
+			      </ul>
+			  </div><!-- /.container-fluid -->
+			</nav>
+		</div>
+		<!--end #top-->
+		
+		<div class="container">
+			<div class="border-dki" id="border-dki">				     
+				     	<input type="text" id="txtUsername" placeholder="Nhập tên người dùng" style=" width: 300px; height: 30px; " >
+				     	<input class="btn-info  btn-dki" type="button" value="Register" id="btnDki">
+					</div>
+		</div>
+					
+
+				    
+				    
+			
+			
+			
+			
+
+		</div>
+		
+	</div>
+</body>
+</html>
